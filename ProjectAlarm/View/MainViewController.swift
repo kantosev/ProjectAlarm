@@ -9,34 +9,34 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    var mainViewModel: MainViewModelProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainViewModel = MainViewModel()
         registerCell()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return mainViewModel?.numberOfItemsInSection() ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? AlarmCell else { return UITableViewCell() }
-        cell.alarmTitle.text = "07:55"
-        cell.alarmSubtitle.text = "Будильник, каждый будний день"
-        
+        mainViewModel?.setOfCell(cell: cell, with: indexPath)
+        let alarmSwitch = UISwitch(frame: CGRect())
+        alarmSwitch.addTarget(self, action: #selector(switchFunction(_:)), for: .valueChanged)
+        cell.accessoryView = alarmSwitch
+
 
     
         return cell
@@ -56,6 +56,10 @@ class MainViewController: UITableViewController {
     */
     private func registerCell() {
         tableView.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
+    }
+    
+    @objc private func switchFunction(_ sender: UISwitch) {
+        print(sender.isOn)
     }
 
 }

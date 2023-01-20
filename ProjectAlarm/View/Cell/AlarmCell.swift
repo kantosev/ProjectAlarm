@@ -15,8 +15,6 @@ class AlarmCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let alarmSwitch = UISwitch(frame: CGRect())
-        accessoryView = alarmSwitch
         backgroundColor = .black
         
     }
