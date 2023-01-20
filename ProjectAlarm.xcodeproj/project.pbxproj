@@ -17,6 +17,9 @@
 		3AA9DF11297AFDA2008BC350 /* ProjectAlarmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DF10297AFDA2008BC350 /* ProjectAlarmUITestsLaunchTests.swift */; };
 		3AA9DF1E297B105F008BC350 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DF1D297B105F008BC350 /* MainViewController.swift */; };
 		3AA9DF25297B112B008BC350 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DF24297B112B008BC350 /* MainViewModel.swift */; };
+		3AA9DF29297B1401008BC350 /* MainViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DF28297B1401008BC350 /* MainViewModelProtocol.swift */; };
+		3AA9DF2D297B16D5008BC350 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DF2B297B16D5008BC350 /* AlarmCell.swift */; };
+		3AA9DF2E297B16D5008BC350 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9DF2C297B16D5008BC350 /* AlarmCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		3AA9DF10297AFDA2008BC350 /* ProjectAlarmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAlarmUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3AA9DF1D297B105F008BC350 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3AA9DF24297B112B008BC350 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3AA9DF28297B1401008BC350 /* MainViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelProtocol.swift; sourceTree = "<group>"; };
+		3AA9DF2B297B16D5008BC350 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
+		3AA9DF2C297B16D5008BC350 /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		3AA9DF1F297B10BF008BC350 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3AA9DF2A297B169D008BC350 /* Cell */,
 				3AA9DF1D297B105F008BC350 /* MainViewController.swift */,
 				3AA9DF20297B10E2008BC350 /* Storyboard */,
 			);
@@ -166,8 +173,18 @@
 		3AA9DF23297B110A008BC350 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3AA9DF28297B1401008BC350 /* MainViewModelProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3AA9DF2A297B169D008BC350 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3AA9DF2B297B16D5008BC350 /* AlarmCell.swift */,
+				3AA9DF2C297B16D5008BC350 /* AlarmCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +294,7 @@
 				3AA9DEFA297AFDA2008BC350 /* LaunchScreen.storyboard in Resources */,
 				3AA9DEF7297AFDA2008BC350 /* Assets.xcassets in Resources */,
 				3AA9DEF5297AFDA0008BC350 /* Main.storyboard in Resources */,
+				3AA9DF2E297B16D5008BC350 /* AlarmCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +320,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA9DF1E297B105F008BC350 /* MainViewController.swift in Sources */,
+				3AA9DF29297B1401008BC350 /* MainViewModelProtocol.swift in Sources */,
 				3AA9DEEE297AFDA0008BC350 /* AppDelegate.swift in Sources */,
 				3AA9DEF0297AFDA0008BC350 /* SceneDelegate.swift in Sources */,
 				3AA9DF25297B112B008BC350 /* MainViewModel.swift in Sources */,
+				3AA9DF2D297B16D5008BC350 /* AlarmCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -424,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
