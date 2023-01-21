@@ -10,11 +10,14 @@ import UIKit
 class AddAlarmViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    private var alarmDate: DateComponents?
+    var addAlarmCompletion: ((DateComponents) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        alarmDate = dateToDateComponent(date: datePicker.date)
     }
     
     @IBAction func cancelButtonAction(_ sender: UIBarButtonItem) {
@@ -22,11 +25,22 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func addButtonAction(_ sender: UIBarButtonItem) {
-        
+        guard let alarmDate = alarmDate else { return }
+        addAlarmCompletion?(alarmDate)
+        self.dismiss(animated: true)
     }
     @IBAction func datePickerPressed(_ sender: UIDatePicker) {
-        let date = sender.date.formatted()
-        print(date)
+        alarmDate = dateToDateComponent(date: sender.date)
+        
+        
+    }
+    private func dateToDateComponent(date: Date) -> DateComponents {
+        let date = date.formatted(date: .omitted, time: .shortened)
+//      преобразование Date в DateComponent
+        let dateComponentArray = date.components(separatedBy: ":")
+        guard let hour = Int(dateComponentArray[0]), let minute = Int(dateComponentArray[1]) else { return DateComponents() }
+        let dateComponent = DateComponents(hour: hour, minute: minute)
+        return dateComponent
     }
     
 

@@ -10,6 +10,8 @@
 		3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */; };
 		3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */; };
 		3AA4C22A297C0A050009D873 /* AddVC + TVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */; };
+		3AA4C22C297C14390009D873 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4C22B297C14390009D873 /* bell.mp3 */; };
+		3AA4C231297C1A9E0009D873 /* alarmSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4C230297C1A9E0009D873 /* alarmSound.mp3 */; };
 		3AA9DEEE297AFDA0008BC350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DEED297AFDA0008BC350 /* AppDelegate.swift */; };
 		3AA9DEF0297AFDA0008BC350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DEEF297AFDA0008BC350 /* SceneDelegate.swift */; };
 		3AA9DEF5297AFDA0008BC350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9DEF3297AFDA0008BC350 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
 		3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDS.swift"; sourceTree = "<group>"; };
 		3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDelegate.swift"; sourceTree = "<group>"; };
+		3AA4C22B297C14390009D873 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		3AA4C230297C1A9E0009D873 /* alarmSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarmSound.mp3; sourceTree = "<group>"; };
 		3AA9DEEA297AFDA0008BC350 /* ProjectAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA9DEED297AFDA0008BC350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA9DEEF297AFDA0008BC350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 			path = AddViewControlle;
 			sourceTree = "<group>";
 		};
+		3AA4C22D297C144B0009D873 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				3AA4C230297C1A9E0009D873 /* alarmSound.mp3 */,
+				3AA4C22B297C14390009D873 /* bell.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		3AA9DEE1297AFDA0008BC350 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 				3AA9DF23297B110A008BC350 /* Protocols */,
 				3AA9DEF6297AFDA2008BC350 /* Assets.xcassets */,
 				3AA9DEFB297AFDA2008BC350 /* Info.plist */,
+				3AA4C22D297C144B0009D873 /* Sound */,
 			);
 			path = ProjectAlarm;
 			sourceTree = "<group>";
@@ -308,7 +322,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA4C231297C1A9E0009D873 /* alarmSound.mp3 in Resources */,
 				3AA9DEFA297AFDA2008BC350 /* LaunchScreen.storyboard in Resources */,
+				3AA4C22C297C14390009D873 /* bell.mp3 in Resources */,
 				3AA9DEF7297AFDA2008BC350 /* Assets.xcassets in Resources */,
 				3AA9DEF5297AFDA0008BC350 /* Main.storyboard in Resources */,
 				3AA9DF2E297B16D5008BC350 /* AlarmCell.xib in Resources */,

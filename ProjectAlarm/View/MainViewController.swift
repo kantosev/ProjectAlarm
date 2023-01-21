@@ -42,15 +42,21 @@ class MainViewController: UITableViewController {
 
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toAddVCSegue" {
+            guard let nc = segue.destination as? UINavigationController,
+                  let vc = nc.topViewController as? AddAlarmViewController  else { return }
+            vc.addAlarmCompletion = { dateComponent in
+                self.mainViewModel?.addDateToArratOfAlarm(date: dateComponent)
+                self.tableView.reloadData()
+            }
+        }
     }
-    */
+    // MARK: -
     private func registerCell() {
         tableView.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
     }

@@ -26,7 +26,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="YuT-eh-1YK"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wkB-C5-3EP">
                             <connections>
-                                <segue destination="bT6-KM-Fxk" kind="presentation" id="mkV-tU-S3L"/>
+                                <segue destination="bT6-KM-Fxk" kind="presentation" identifier="toAddVCSegue" id="mkV-tU-S3L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,12 +96,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="Y9P-kH-4TF" id="1ZF-uv-sRb"/>
                         <outlet property="tableView" destination="aiX-yi-Uhi" id="zCp-H3-gNu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPd-Tk-1lq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3050" y="-115"/>
+            <point key="canvasLocation" x="2473" y="-127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Uw-Dy-rKo">
@@ -124,6 +125,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9Mu-JK-NfI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tt7-Bx-h05" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bT6-KM-Fxk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hNT-0N-2Ao">
@@ -135,9 +137,8 @@
                         <segue destination="tZR-iH-QGm" kind="relationship" relationship="rootViewController" id="GpD-vt-pYE"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tt7-Bx-h05" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293.8931297709923" y="-115.49295774647888"/>
+            <point key="canvasLocation" x="1752" y="-127"/>
         </scene>
     </scenes>
     <resources>
