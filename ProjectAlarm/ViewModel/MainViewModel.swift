@@ -9,6 +9,8 @@ import Foundation
 
 class MainViewModel: MainViewModelProtocol {
     
+    var switchIsOn: Bool = false
+    
     func numberOfItemsInSection() -> Int {
         return 4
     }
@@ -18,4 +20,5 @@ class MainViewModel: MainViewModelProtocol {
         cell.alarmSubtitle.text = "Будильник, каждый будний день"
     }
     
+
 }

@@ -11,4 +11,5 @@ import Foundation
 protocol MainViewModelProtocol {
     func numberOfItemsInSection() -> Int
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath)
+   
 }

@@ -34,11 +34,8 @@ class MainViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? AlarmCell else { return UITableViewCell() }
         mainViewModel?.setOfCell(cell: cell, with: indexPath)
         let alarmSwitch = UISwitch(frame: CGRect())
-        alarmSwitch.addTarget(self, action: #selector(switchFunction(_:)), for: .valueChanged)
+        alarmSwitch.addTarget(self, action: #selector(switchFunction), for: .valueChanged)
         cell.accessoryView = alarmSwitch
-
-
-    
         return cell
     }
     
@@ -58,8 +55,8 @@ class MainViewController: UITableViewController {
         tableView.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
     }
     
-    @objc private func switchFunction(_ sender: UISwitch) {
-        print(sender.isOn)
+    @objc func switchFunction() {
+       
     }
-
+        
 }

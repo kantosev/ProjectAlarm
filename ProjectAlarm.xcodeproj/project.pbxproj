@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */; };
+		3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */; };
+		3AA4C22A297C0A050009D873 /* AddVC + TVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */; };
 		3AA9DEEE297AFDA0008BC350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DEED297AFDA0008BC350 /* AppDelegate.swift */; };
 		3AA9DEF0297AFDA0008BC350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9DEEF297AFDA0008BC350 /* SceneDelegate.swift */; };
 		3AA9DEF5297AFDA0008BC350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9DEF3297AFDA0008BC350 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
+		3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDS.swift"; sourceTree = "<group>"; };
+		3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDelegate.swift"; sourceTree = "<group>"; };
 		3AA9DEEA297AFDA0008BC350 /* ProjectAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA9DEED297AFDA0008BC350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA9DEEF297AFDA0008BC350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AA4C226297C09B80009D873 /* AddViewControlle */ = {
+			isa = PBXGroup;
+			children = (
+				3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */,
+				3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */,
+				3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */,
+			);
+			path = AddViewControlle;
+			sourceTree = "<group>";
+		};
 		3AA9DEE1297AFDA0008BC350 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +158,7 @@
 				3AA9DF2A297B169D008BC350 /* Cell */,
 				3AA9DF1D297B105F008BC350 /* MainViewController.swift */,
 				3AA9DF20297B10E2008BC350 /* Storyboard */,
+				3AA4C226297C09B80009D873 /* AddViewControlle */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,7 +337,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA9DF1E297B105F008BC350 /* MainViewController.swift in Sources */,
+				3AA4C22A297C0A050009D873 /* AddVC + TVDelegate.swift in Sources */,
 				3AA9DF29297B1401008BC350 /* MainViewModelProtocol.swift in Sources */,
+				3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */,
+				3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */,
 				3AA9DEEE297AFDA0008BC350 /* AppDelegate.swift in Sources */,
 				3AA9DEF0297AFDA0008BC350 /* SceneDelegate.swift in Sources */,
 				3AA9DF25297B112B008BC350 /* MainViewModel.swift in Sources */,
