@@ -15,11 +15,10 @@ class AddAlarmViewController: UIViewController {
     private var alarmDate: DateComponents?
     var addAlarmCompletion: ((DateComponents) -> ())?
     private let userDefaults = UserDefaults.standard
-    private var viewModel: AddAlarmViewModelProtocol?
+    private let viewModel: AddAlarmViewModelProtocol? = AddAlarmViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = AddAlarmViewModel()
         alarmDate = viewModel?.dateToDateComponents(date: datePicker.date)
     }
     

@@ -11,6 +11,7 @@ class MainViewModel: MainViewModelProtocol {
     
 //    private var arrayOfAlarm: [DateComponents] = []
     private let userDefaults = UserDefaults.standard
+    private let dateManager: DateManagerProtocol? = DateManager()
     
     
     func numberOfItemsInSection() -> Int {
@@ -20,9 +21,8 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath) {
-        let calendar = Calendar.current
         guard let arrayDateOfAlarms = userDefaults.array(forKey: "alarms") as? [Date] else { return }
-        let date = calendar.dateComponents(in: calendar.timeZone, from: arrayDateOfAlarms[indexPath.row])
+        guard let date = dateManager?.dateToDateComponents(date: arrayDateOfAlarms[indexPath.row]) else { return }
 
         guard let hour = date.hour, let minute = date.minute else { return }
         // Добавление нулей в числа, чтобы не отображалось как 0:0
@@ -39,7 +39,7 @@ class MainViewModel: MainViewModelProtocol {
    
     
     func addDateToArrayOfAlarm(dateComponents: DateComponents) {
-        guard let alarmDate = Calendar.current.date(from: dateComponents) else { return }
+        guard let alarmDate = dateManager?.dateComponentsToDate(dateComponents: dateComponents) else { return }
         var arrayOfAlarm = userDefaults.array(forKey: "alarms")
         if arrayOfAlarm == nil {
             let alarms = [alarmDate]
