@@ -12,6 +12,7 @@ class MainViewModel: MainViewModelProtocol {
 //    private var arrayOfAlarm: [DateComponents] = []
     private let userDefaults = UserDefaults.standard
     private let dateManager: DateManagerProtocol? = DateManager()
+    private let notificationManager = NotificationManager()
     
     
     func numberOfItemsInSection() -> Int {
@@ -23,9 +24,9 @@ class MainViewModel: MainViewModelProtocol {
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath) {
         guard let arrayDateOfAlarms = userDefaults.array(forKey: "alarms") as? [Date] else { return }
         guard let date = dateManager?.dateToDateComponents(date: arrayDateOfAlarms[indexPath.row]) else { return }
-
         guard let hour = date.hour, let minute = date.minute else { return }
-        // Добавление нулей в числа, чтобы не отображалось как 0:0
+        
+//         Добавление нулей в числа, чтобы не отображалось как 0:0
         if (0...9).contains(hour), (0...9).contains(minute) {
             cell.alarmTitle.text = "0" + "\(hour)" + ":" + "0" + "\(minute)"
         } else if (0...9).contains(hour) {
@@ -48,6 +49,9 @@ class MainViewModel: MainViewModelProtocol {
             arrayOfAlarm?.append(alarmDate)
             userDefaults.set(arrayOfAlarm, forKey: "alarms")
         }
+        // оставляю только часы и минуты, потому что со всей информацией почему то не работает
+        let newDateComponents = DateComponents(hour: dateComponents.hour, minute: dateComponents.minute)
+        notificationManager.addNotification(with: newDateComponents)
     }
     
     

@@ -11,6 +11,8 @@
 		3A3462B6297D6BCD00C63DE9 /* DateManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462B5297D6BCD00C63DE9 /* DateManagerProtocol.swift */; };
 		3A3462B8297D6F9A00C63DE9 /* AddAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462B7297D6F9A00C63DE9 /* AddAlarmViewModel.swift */; };
 		3A3462BA297D707000C63DE9 /* AddAlarmViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462B9297D707000C63DE9 /* AddAlarmViewModelProtocol.swift */; };
+		3A3462BC297D8C6B00C63DE9 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462BB297D8C6B00C63DE9 /* Support.swift */; };
+		3A3462BE297DAAB600C63DE9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */; };
 		3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */; };
 		3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */; };
 		3AA4C22A297C0A050009D873 /* AddVC + TVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */; };
@@ -53,6 +55,8 @@
 		3A3462B5297D6BCD00C63DE9 /* DateManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManagerProtocol.swift; sourceTree = "<group>"; };
 		3A3462B7297D6F9A00C63DE9 /* AddAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewModel.swift; sourceTree = "<group>"; };
 		3A3462B9297D707000C63DE9 /* AddAlarmViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewModelProtocol.swift; sourceTree = "<group>"; };
+		3A3462BB297D8C6B00C63DE9 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
 		3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDS.swift"; sourceTree = "<group>"; };
 		3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDelegate.swift"; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3462B3297D6A8800C63DE9 /* DateManager.swift */,
+				3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				3AA9DEF6297AFDA2008BC350 /* Assets.xcassets */,
 				3AA9DEFB297AFDA2008BC350 /* Info.plist */,
 				3AA4C22D297C144B0009D873 /* Sound */,
+				3A3462BB297D8C6B00C63DE9 /* Support.swift */,
 			);
 			path = ProjectAlarm;
 			sourceTree = "<group>";
@@ -379,10 +385,12 @@
 				3A3462B8297D6F9A00C63DE9 /* AddAlarmViewModel.swift in Sources */,
 				3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */,
 				3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */,
+				3A3462BC297D8C6B00C63DE9 /* Support.swift in Sources */,
 				3A3462BA297D707000C63DE9 /* AddAlarmViewModelProtocol.swift in Sources */,
 				3A3462B6297D6BCD00C63DE9 /* DateManagerProtocol.swift in Sources */,
 				3AA9DEEE297AFDA0008BC350 /* AppDelegate.swift in Sources */,
 				3AA9DEF0297AFDA0008BC350 /* SceneDelegate.swift in Sources */,
+				3A3462BE297DAAB600C63DE9 /* NotificationManager.swift in Sources */,
 				3AA9DF25297B112B008BC350 /* MainViewModel.swift in Sources */,
 				3AA9DF2D297B16D5008BC350 /* AlarmCell.swift in Sources */,
 			);

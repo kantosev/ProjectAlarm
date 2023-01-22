@@ -10,11 +10,13 @@ import UIKit
 class MainViewController: UITableViewController {
 
     var mainViewModel: MainViewModelProtocol?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewModel = MainViewModel()
         registerCell()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,6 +38,7 @@ class MainViewController: UITableViewController {
         
         let alarmSwitch = UISwitch(frame: CGRect())
         alarmSwitch.addTarget(self, action: #selector(switchFunction), for: .valueChanged)
+        alarmSwitch.tag = indexPath.row
         cell.accessoryView = alarmSwitch
         
         return cell
@@ -53,6 +56,7 @@ class MainViewController: UITableViewController {
             guard let navController = segue.destination as? UINavigationController,
                   let vc = navController.topViewController as? AddAlarmViewController  else { return }
             vc.addAlarmCompletion = { alarmDateComponents in
+                
                 self.mainViewModel?.addDateToArrayOfAlarm(dateComponents: alarmDateComponents)
                 self.tableView.reloadData()
             }
@@ -63,8 +67,10 @@ class MainViewController: UITableViewController {
         tableView.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
     }
     
-    @objc func switchFunction() {
-       
+    @objc func switchFunction(_ sender: UISwitch) {
+        if sender.isOn {
+            print(sender.tag)
+        }
     }
         
 }
