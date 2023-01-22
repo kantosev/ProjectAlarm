@@ -11,5 +11,5 @@ import Foundation
 protocol MainViewModelProtocol {
     func numberOfItemsInSection() -> Int
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath)
-    func addDateToArratOfAlarm(date: DateComponents)
+    func addDateToArrayOfAlarm(dateComponents: DateComponents)
 }

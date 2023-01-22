@@ -33,9 +33,11 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? AlarmCell else { return UITableViewCell() }
         mainViewModel?.setOfCell(cell: cell, with: indexPath)
+        
         let alarmSwitch = UISwitch(frame: CGRect())
         alarmSwitch.addTarget(self, action: #selector(switchFunction), for: .valueChanged)
         cell.accessoryView = alarmSwitch
+        
         return cell
     }
     
@@ -48,10 +50,10 @@ class MainViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddVCSegue" {
-            guard let nc = segue.destination as? UINavigationController,
-                  let vc = nc.topViewController as? AddAlarmViewController  else { return }
-            vc.addAlarmCompletion = { dateComponent in
-                self.mainViewModel?.addDateToArratOfAlarm(date: dateComponent)
+            guard let navController = segue.destination as? UINavigationController,
+                  let vc = navController.topViewController as? AddAlarmViewController  else { return }
+            vc.addAlarmCompletion = { alarmDateComponents in
+                self.mainViewModel?.addDateToArrayOfAlarm(dateComponents: alarmDateComponents)
                 self.tableView.reloadData()
             }
         }
