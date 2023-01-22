@@ -12,7 +12,7 @@ class MainViewModel: MainViewModelProtocol {
 //    private var arrayOfAlarm: [DateComponents] = []
     private let userDefaults = UserDefaults.standard
     private let dateManager: DateManagerProtocol? = DateManager()
-    private let notificationManager = NotificationManager()
+    private let notificationManager: NotificationManagerProtocol = NotificationManager()
     
     
     func numberOfItemsInSection() -> Int {
@@ -49,11 +49,18 @@ class MainViewModel: MainViewModelProtocol {
             arrayOfAlarm?.append(alarmDate)
             userDefaults.set(arrayOfAlarm, forKey: "alarms")
         }
+        addNotification(with: dateComponents)
+    }
+    
+    func addNotification(with dateComponents: DateComponents) {
         // оставляю только часы и минуты, потому что со всей информацией почему то не работает
         let newDateComponents = DateComponents(hour: dateComponents.hour, minute: dateComponents.minute)
         notificationManager.addNotification(with: newDateComponents)
     }
-    
+    func deleteNotification(with dateComponents: DateComponents) {
+        let newDateComponents = DateComponents(hour: dateComponents.hour, minute: dateComponents.minute)
+        notificationManager.deleteNotification(with: newDateComponents)
+    }
     
 
 }

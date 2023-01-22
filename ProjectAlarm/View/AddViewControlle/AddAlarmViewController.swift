@@ -28,6 +28,7 @@ class AddAlarmViewController: UIViewController {
     
     @IBAction func addButtonAction(_ sender: UIBarButtonItem) {
         guard let alarmDateComponents = alarmDate else { return }
+        
         addAlarmCompletion?(alarmDateComponents)
         self.dismiss(animated: true)
     }

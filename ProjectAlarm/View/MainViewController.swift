@@ -10,16 +10,14 @@ import UIKit
 class MainViewController: UITableViewController {
 
     var mainViewModel: MainViewModelProtocol?
-   
+    var dateComponents: DateComponents?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewModel = MainViewModel()
         registerCell()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
     
     }
 
@@ -39,15 +37,14 @@ class MainViewController: UITableViewController {
         let alarmSwitch = UISwitch(frame: CGRect())
         alarmSwitch.addTarget(self, action: #selector(switchFunction), for: .valueChanged)
         alarmSwitch.tag = indexPath.row
+        // switch в положении On после создания нового будильника
+        alarmSwitch.setOn(true, animated: true)
         cell.accessoryView = alarmSwitch
         
         return cell
     }
     
 
-    
-
-    
     // MARK: - Navigation
 
 
@@ -56,7 +53,7 @@ class MainViewController: UITableViewController {
             guard let navController = segue.destination as? UINavigationController,
                   let vc = navController.topViewController as? AddAlarmViewController  else { return }
             vc.addAlarmCompletion = { alarmDateComponents in
-                
+                self.dateComponents = alarmDateComponents
                 self.mainViewModel?.addDateToArrayOfAlarm(dateComponents: alarmDateComponents)
                 self.tableView.reloadData()
             }
@@ -68,8 +65,11 @@ class MainViewController: UITableViewController {
     }
     
     @objc func switchFunction(_ sender: UISwitch) {
+        guard let dateComponents = dateComponents else { return }
         if sender.isOn {
-            print(sender.tag)
+            mainViewModel?.addNotification(with: dateComponents)
+        } else {
+            mainViewModel?.deleteNotification(with: dateComponents)
         }
     }
         

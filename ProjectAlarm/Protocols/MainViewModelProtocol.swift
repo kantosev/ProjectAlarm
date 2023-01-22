@@ -12,4 +12,6 @@ protocol MainViewModelProtocol {
     func numberOfItemsInSection() -> Int
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath)
     func addDateToArrayOfAlarm(dateComponents: DateComponents)
+    func addNotification(with dateComponents: DateComponents)
+    func deleteNotification(with dateComponents: DateComponents)
 }
