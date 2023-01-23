@@ -10,7 +10,7 @@ import Foundation
 
 struct AlarmModel: Codable {
     var id: String
-    var date: Date
+    var dateComponents: DateComponents
     var enabled: Bool = false
 }
 

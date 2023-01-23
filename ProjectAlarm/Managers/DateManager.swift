@@ -21,5 +21,4 @@ class DateManager: DateManagerProtocol {
         return dateComponents
     }
     
-    
 }
