@@ -15,6 +15,8 @@
 		3A3462BE297DAAB600C63DE9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */; };
 		3A3462C0297DAF3900C63DE9 /* NotificationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462BF297DAF3900C63DE9 /* NotificationManagerProtocol.swift */; };
 		3A3462C3297DB2DE00C63DE9 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462C2297DB2DE00C63DE9 /* String + Extension.swift */; };
+		3A94D24F297EF4E300D6EB11 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94D24E297EF4E300D6EB11 /* AlarmModel.swift */; };
+		3A94D251297EFE8400D6EB11 /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94D250297EFE8400D6EB11 /* UserDefaults + Extension.swift */; };
 		3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */; };
 		3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */; };
 		3AA4C22A297C0A050009D873 /* AddVC + TVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */; };
@@ -61,6 +63,8 @@
 		3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		3A3462BF297DAF3900C63DE9 /* NotificationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerProtocol.swift; sourceTree = "<group>"; };
 		3A3462C2297DB2DE00C63DE9 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		3A94D24E297EF4E300D6EB11 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		3A94D250297EFE8400D6EB11 /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
 		3AA4C227297C09DD0009D873 /* AddVC + TVDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDS.swift"; sourceTree = "<group>"; };
 		3AA4C229297C0A050009D873 /* AddVC + TVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC + TVDelegate.swift"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				3A3462BB297D8C6B00C63DE9 /* Support.swift */,
 				3A3462C2297DB2DE00C63DE9 /* String + Extension.swift */,
+				3A94D250297EFE8400D6EB11 /* UserDefaults + Extension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 		3AA9DF22297B1103008BC350 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A94D24E297EF4E300D6EB11 /* AlarmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,7 +402,9 @@
 				3AA9DF1E297B105F008BC350 /* MainViewController.swift in Sources */,
 				3A3462B4297D6A8800C63DE9 /* DateManager.swift in Sources */,
 				3AA4C22A297C0A050009D873 /* AddVC + TVDelegate.swift in Sources */,
+				3A94D251297EFE8400D6EB11 /* UserDefaults + Extension.swift in Sources */,
 				3AA9DF29297B1401008BC350 /* MainViewModelProtocol.swift in Sources */,
+				3A94D24F297EF4E300D6EB11 /* AlarmModel.swift in Sources */,
 				3A3462B8297D6F9A00C63DE9 /* AddAlarmViewModel.swift in Sources */,
 				3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */,
 				3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */,

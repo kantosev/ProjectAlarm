@@ -18,7 +18,7 @@ class MainViewController: UITableViewController {
         registerCell()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-    
+        
     }
 
     // MARK: - Table view data source
@@ -38,6 +38,7 @@ class MainViewController: UITableViewController {
         alarmSwitch.addTarget(self, action: #selector(switchFunction), for: .valueChanged)
         alarmSwitch.tag = indexPath.row
         // switch в положении On после создания нового будильника
+        #warning("При создании нового будильника все остальные включаются")
         alarmSwitch.setOn(true, animated: true)
         cell.accessoryView = alarmSwitch
         
