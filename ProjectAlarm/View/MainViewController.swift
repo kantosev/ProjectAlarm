@@ -10,7 +10,6 @@ import UIKit
 class MainViewController: UITableViewController {
 
     var mainViewModel: MainViewModelProtocol?
-    var dateComponents: DateComponents?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +32,8 @@ class MainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? AlarmCell else { return UITableViewCell() }
+        createSwitch(with: cell, indexPath: indexPath)
         mainViewModel?.setOfCell(cell: cell, with: indexPath)
-        
-        let alarmSwitch = UISwitch(frame: CGRect())
-        alarmSwitch.addTarget(self, action: #selector(switchFunction), for: .valueChanged)
-        alarmSwitch.tag = indexPath.row
-
-
-        cell.accessoryView = alarmSwitch
         
         return cell
     }
@@ -54,7 +47,6 @@ class MainViewController: UITableViewController {
             guard let navController = segue.destination as? UINavigationController,
                   let vc = navController.topViewController as? AddAlarmViewController  else { return }
             vc.addAlarmCompletion = { alarmDateComponents in
-                self.dateComponents = alarmDateComponents
                 self.mainViewModel?.addDateToArrayOfAlarm(dateComponents: alarmDateComponents)
                 self.tableView.reloadData()
             }
@@ -65,12 +57,24 @@ class MainViewController: UITableViewController {
         tableView.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
     }
     
-    @objc func switchFunction(_ sender: UISwitch) {
-        guard let dateComponents = dateComponents else { return }
+    
+    // MARK: - SUPPORT FUNCTION
+    
+    private func createSwitch(with cell: AlarmCell, indexPath: IndexPath) {
+        let alarmSwitch = UISwitch(frame: CGRect())
+        alarmSwitch.addTarget(self, action: #selector(switchFunction(_:)), for: .valueChanged)
+        alarmSwitch.tag = indexPath.row
+        cell.accessoryView = alarmSwitch
+    }
+    
+    
+    @objc private func switchFunction(_ sender: UISwitch) {
+        mainViewModel?.editEnabledValueInAlarm(with: sender.tag, enabled: sender.isOn)
         if sender.isOn {
-            mainViewModel?.addNotification(with: dateComponents)
+            mainViewModel?.addNotification(with: sender.tag)
         } else {
-            mainViewModel?.deleteNotification(with: dateComponents)
+            mainViewModel?.deleteNotification(with: sender.tag)
+            
         }
     }
         

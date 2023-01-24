@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 class MainViewModel: MainViewModelProtocol {
     
-    //    private var arrayOfAlarm: [DateComponents] = []
     private let userDefaults = UserDefaults.standard
     private let dateManager: DateManagerProtocol? = DateManager()
     private let notificationManager: NotificationManagerProtocol = NotificationManager()
@@ -23,6 +23,10 @@ class MainViewModel: MainViewModelProtocol {
     
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath) {
         guard let arrayDateOfAlarms = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms") else { return }
+        // Включение UISwitch
+        let cellSwitch = cell.accessoryView as? UISwitch
+        cellSwitch?.isOn = arrayDateOfAlarms[indexPath.row].enabled
+        
         let dateComponents = arrayDateOfAlarms[indexPath.row].dateComponents
         guard let hour = dateComponents.hour, let minute = dateComponents.minute else { return }
         
@@ -36,6 +40,7 @@ class MainViewModel: MainViewModelProtocol {
         } else {
             cell.alarmTitle.text = "\(hour)" + ":" + "\(minute)"
         }
+        
     }
     
     
@@ -50,25 +55,37 @@ class MainViewModel: MainViewModelProtocol {
             arrayOfAlarm?.append(AlarmModel(id: getIdentifier(from: dateComponents), dateComponents: dateComponents))
             userDefaults.setCodableObject(arrayOfAlarm, forKey: "alarms")
         }
-        addNotification(with: dateComponents)
+        notificationManager.addNotification(with: dateComponents)
     }
     
-    func addNotification(with dateComponents: DateComponents) {
+    func addNotification(with index: Int) {
+        let array = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms")
+        let dateComponents = array?[index].dateComponents
         // оставляю только часы и минуты, потому что со всей информацией почему то не работает
-        let newDateComponents = DateComponents(hour: dateComponents.hour, minute: dateComponents.minute)
+        let newDateComponents = DateComponents(hour: dateComponents?.hour, minute: dateComponents?.minute)
+        print(newDateComponents)
         notificationManager.addNotification(with: newDateComponents)
     }
-    func deleteNotification(with dateComponents: DateComponents) {
-        let newDateComponents = DateComponents(hour: dateComponents.hour, minute: dateComponents.minute)
+    func deleteNotification(with index: Int) {
+        let array = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms")
+        let dateComponents = array?[index].dateComponents
+        let newDateComponents = DateComponents(hour: dateComponents?.hour, minute: dateComponents?.minute)
+        print(newDateComponents)
         notificationManager.deleteNotification(with: newDateComponents)
     }
     
     private func getIdentifier(from dateComponents: DateComponents) -> String {
         let dateIdentifier = Date.now
-        
         guard let hour = dateComponents.hour, let minute = dateComponents.minute else { return "" }
         let firstPath = "\(hour)"
         let twoPath = "\(minute)"
         return firstPath + twoPath + "\(dateIdentifier)"
     }
+    
+    func editEnabledValueInAlarm(with index: Int, enabled: Bool) {
+        var arrayOfAlarm = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms")
+        arrayOfAlarm?[index].enabled = enabled
+        userDefaults.setCodableObject(arrayOfAlarm, forKey: "alarms")
+    }
+   
 }

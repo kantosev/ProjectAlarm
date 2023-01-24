@@ -11,7 +11,7 @@ import Foundation
 struct AlarmModel: Codable {
     var id: String
     var dateComponents: DateComponents
-    var enabled: Bool = false
+    var enabled: Bool = true
 }
 
 
