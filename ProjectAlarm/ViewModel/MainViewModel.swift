@@ -63,14 +63,12 @@ class MainViewModel: MainViewModelProtocol {
         let dateComponents = array?[index].dateComponents
         // оставляю только часы и минуты, потому что со всей информацией почему то не работает
         let newDateComponents = DateComponents(hour: dateComponents?.hour, minute: dateComponents?.minute)
-        print(newDateComponents)
         notificationManager.addNotification(with: newDateComponents)
     }
     func deleteNotification(with index: Int) {
         let array = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms")
         let dateComponents = array?[index].dateComponents
         let newDateComponents = DateComponents(hour: dateComponents?.hour, minute: dateComponents?.minute)
-        print(newDateComponents)
         notificationManager.deleteNotification(with: newDateComponents)
     }
     
