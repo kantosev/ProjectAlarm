@@ -54,8 +54,6 @@ class MainViewController: UITableViewController {
         return action
     }
     
-
-    
     
     // MARK: - Navigation
 
@@ -65,6 +63,7 @@ class MainViewController: UITableViewController {
             guard let navController = segue.destination as? UINavigationController,
                   let vc = navController.topViewController as? AddAlarmViewController  else { return }
             vc.addAlarmCompletion = { alarmDateComponents in
+                self.isEditing = false
                 self.mainViewModel?.addDateToArrayOfAlarm(dateComponents: alarmDateComponents)
                 self.tableView.reloadData()
             }

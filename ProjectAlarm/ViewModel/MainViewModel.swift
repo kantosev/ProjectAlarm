@@ -22,6 +22,7 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func setOfCell(cell: AlarmCell, with indexPath: IndexPath) {
+        cell.editingAccessoryType = .disclosureIndicator
         guard let arrayDateOfAlarms = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms") else { return }
         // Включение UISwitch
         let cellSwitch = cell.accessoryView as? UISwitch
