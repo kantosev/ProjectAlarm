@@ -46,8 +46,7 @@ class MainViewModel: MainViewModelProtocol {
     
     
     func addDateToArrayOfAlarm(dateComponents: DateComponents) {
-        //        guard let alarmDate = dateManager?.dateComponentsToDate(dateComponents: dateComponents) else { return }
-        
+       
         var arrayOfAlarm = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms")
         if arrayOfAlarm == nil {
             let alarms = [AlarmModel(id: getIdentifier(from: dateComponents), dateComponents: dateComponents)]
@@ -56,7 +55,8 @@ class MainViewModel: MainViewModelProtocol {
             arrayOfAlarm?.append(AlarmModel(id: getIdentifier(from: dateComponents), dateComponents: dateComponents))
             userDefaults.setCodableObject(arrayOfAlarm, forKey: "alarms")
         }
-        notificationManager.addNotification(with: dateComponents)
+        let newDateComponents = DateComponents(hour: dateComponents.hour, minute: dateComponents.minute)
+        notificationManager.addNotification(with: newDateComponents)
     }
     
     func addNotification(with index: Int) {

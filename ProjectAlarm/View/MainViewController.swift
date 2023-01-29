@@ -47,6 +47,15 @@ class MainViewController: UITableViewController {
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
             self.mainViewModel?.deleteNotification(with: indexPath.row)
             arrayOfAlarm?.remove(at: indexPath.row)
+            // меняю tag switch
+            let cells = tableView.visibleCells
+            for cell in cells {
+                guard let sw = cell.accessoryView as? UISwitch else { return }
+                // если остальные ячейки находятся ниже удаляемой ячейки, то индексы свитчей уменьшаются на единицу
+                if sw.tag > indexPath.row {
+                    sw.tag -= 1
+                }
+            }
             userDefaults.setCodableObject(arrayOfAlarm, forKey: "alarms")
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -96,8 +105,10 @@ class MainViewController: UITableViewController {
         mainViewModel?.editEnabledValueInAlarm(with: sender.tag, enabled: sender.isOn)
         if sender.isOn {
             mainViewModel?.addNotification(with: sender.tag)
+           
         } else {
             mainViewModel?.deleteNotification(with: sender.tag)
+            
         }
     }
         

@@ -16,9 +16,16 @@ class NotificationManager: NotificationManagerProtocol {
         let content = UNMutableNotificationContent()
         content.title = "Будильник"
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.mp3"))
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        center.add(request)
+        
+        center.add(request) { error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+            
+        }
       
     }
     func deleteNotification(with dateComponents: DateComponents) {
