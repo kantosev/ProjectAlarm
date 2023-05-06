@@ -9,7 +9,7 @@ import Foundation
 
 extension DefaultStringInterpolation {
     // чтобы не появлялось предупреждение при интерполяции строки
-  mutating func appendInterpolation<T>(_ optional: T?) {
-    appendInterpolation(String(describing: optional))
-  }
+    mutating func appendInterpolation<T>(_ optional: T?) {
+        appendInterpolation(String(describing: optional))
+    }
 }

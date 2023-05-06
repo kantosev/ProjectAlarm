@@ -46,7 +46,7 @@ class MainViewModel: MainViewModelProtocol {
     
     
     func addDateToArrayOfAlarm(dateComponents: DateComponents) {
-       
+        
         var arrayOfAlarm = userDefaults.getCodableObject(dataType: [AlarmModel].self, key: "alarms")
         if arrayOfAlarm == nil {
             let alarms = [AlarmModel(id: getIdentifier(from: dateComponents), dateComponents: dateComponents)]
@@ -86,5 +86,5 @@ class MainViewModel: MainViewModelProtocol {
         arrayOfAlarm?[index].enabled = enabled
         userDefaults.setCodableObject(arrayOfAlarm, forKey: "alarms")
     }
-   
+    
 }

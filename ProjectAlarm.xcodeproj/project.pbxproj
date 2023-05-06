@@ -15,7 +15,6 @@
 		3A3462BE297DAAB600C63DE9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */; };
 		3A3462C0297DAF3900C63DE9 /* NotificationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462BF297DAF3900C63DE9 /* NotificationManagerProtocol.swift */; };
 		3A3462C3297DB2DE00C63DE9 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3462C2297DB2DE00C63DE9 /* String + Extension.swift */; };
-		3A910FC7298533E900A02278 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A910FC6298533E900A02278 /* ToDo.swift */; };
 		3A94D24F297EF4E300D6EB11 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94D24E297EF4E300D6EB11 /* AlarmModel.swift */; };
 		3A94D251297EFE8400D6EB11 /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94D250297EFE8400D6EB11 /* UserDefaults + Extension.swift */; };
 		3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */; };
@@ -64,7 +63,6 @@
 		3A3462BD297DAAB600C63DE9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		3A3462BF297DAF3900C63DE9 /* NotificationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerProtocol.swift; sourceTree = "<group>"; };
 		3A3462C2297DB2DE00C63DE9 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
-		3A910FC6298533E900A02278 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		3A94D24E297EF4E300D6EB11 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		3A94D250297EFE8400D6EB11 /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		3AA4C224297BFD3A0009D873 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				3A3462BB297D8C6B00C63DE9 /* Support.swift */,
 				3A3462C2297DB2DE00C63DE9 /* String + Extension.swift */,
 				3A94D250297EFE8400D6EB11 /* UserDefaults + Extension.swift */,
-				3A910FC6298533E900A02278 /* ToDo.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -412,7 +409,6 @@
 				3AA4C225297BFD3A0009D873 /* AddAlarmViewController.swift in Sources */,
 				3AA4C228297C09DD0009D873 /* AddVC + TVDS.swift in Sources */,
 				3A3462BC297D8C6B00C63DE9 /* Support.swift in Sources */,
-				3A910FC7298533E900A02278 /* ToDo.swift in Sources */,
 				3A3462BA297D707000C63DE9 /* AddAlarmViewModelProtocol.swift in Sources */,
 				3A3462B6297D6BCD00C63DE9 /* DateManagerProtocol.swift in Sources */,
 				3AA9DEEE297AFDA0008BC350 /* AppDelegate.swift in Sources */,
@@ -527,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -582,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -599,7 +595,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FS563UXRHA;
+				DEVELOPMENT_TEAM = CBGVUJP69Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjectAlarm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -607,6 +603,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +635,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

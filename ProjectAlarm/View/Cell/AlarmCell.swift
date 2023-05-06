@@ -8,7 +8,7 @@
 import UIKit
 
 class AlarmCell: UITableViewCell {
-
+    
     @IBOutlet weak var alarmTitle: UILabel!
     @IBOutlet weak var alarmSubtitle: UILabel!
     
@@ -18,7 +18,7 @@ class AlarmCell: UITableViewCell {
         backgroundColor = .black
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

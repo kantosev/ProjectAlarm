@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UITableViewController {
-
+    
     var mainViewModel: MainViewModelProtocol?
     
     var editButton: UIBarButtonItem!
@@ -23,16 +23,16 @@ class MainViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.leftBarButtonItem = editButton
-       
+        
     }
-
+    
     // MARK: - Table view data source
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mainViewModel?.numberOfItemsInSection() ?? 0
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? AlarmCell else { return UITableViewCell() }
@@ -65,8 +65,8 @@ class MainViewController: UITableViewController {
     
     
     // MARK: - Navigation
-
-
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddVCSegue" {
             guard let navController = segue.destination as? UINavigationController,
@@ -100,16 +100,16 @@ class MainViewController: UITableViewController {
     }
     
     
-
+    
     @objc private func switchFunction(_ sender: UISwitch) {
         mainViewModel?.editEnabledValueInAlarm(with: sender.tag, enabled: sender.isOn)
         if sender.isOn {
             mainViewModel?.addNotification(with: sender.tag)
-           
+            
         } else {
             mainViewModel?.deleteNotification(with: sender.tag)
             
         }
     }
-        
+    
 }

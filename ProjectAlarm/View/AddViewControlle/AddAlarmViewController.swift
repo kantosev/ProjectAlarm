@@ -8,7 +8,7 @@
 import UIKit
 
 class AddAlarmViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -35,5 +35,5 @@ class AddAlarmViewController: UIViewController {
     @IBAction func datePickerPressed(_ sender: UIDatePicker) {
         alarmDate = viewModel?.dateToDateComponents(date: sender.date)
     }
-
+    
 }
